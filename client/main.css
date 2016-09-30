@@ -1,5 +1,1 @@
 /* CSS declarations go here */
-.parallax img {
-	display: inherit;
-    transform: translate3d(-50%, 404px, 0px);
-}
