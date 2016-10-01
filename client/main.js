@@ -18,3 +18,10 @@ this.layout('ApplicationLayout');
   // {{> yield}}
   this.render('Contact');
 });
+
+Router.route('/families', function () {
+this.layout('ApplicationLayout');
+  // render the Post template into the "main" region
+  // {{> yield}}
+  this.render('Families');
+});
