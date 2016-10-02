@@ -113,3 +113,9 @@ Template.contact.onRendered(function(){
 	$('#textarea1').trigger('autoresize')
 });
 
+Template.contact.helpers({
+  contactFormSchema: function() {
+    return Schema.contact;
+  }
+});
+
