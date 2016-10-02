@@ -4,8 +4,5 @@ $(document).ready(function(){
     });
 
 Router.route('/', function () {
-  this.layout('ApplicationLayout');
-  // render the Post template into the "main" region
-  // {{> yield}}
   this.render('Home');
 });
