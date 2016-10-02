@@ -5,6 +5,9 @@
 
 Router.route('/', function () {
   this.render('Home');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
   
 
@@ -12,6 +15,9 @@ Router.route('/', function () {
 
 Router.route('/pricing', function () {
   this.render('pricing');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
   
 
@@ -19,24 +25,36 @@ Router.route('/pricing', function () {
 
 Router.route('/contact', function () {
   this.render('contact');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
   
 
 });
 Router.route('/families', function () {
   this.render('families');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
   
 
 });
 Router.route('/children', function () {
   this.render('families');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
   
 
 });
 Router.route('/babies', function () {
   this.render('families');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
   
 
@@ -44,20 +62,32 @@ Router.route('/babies', function () {
 
 Router.route('/maternity', function () {
   this.render('families');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
   
 
 });
 Router.route('/seniors', function () {
   this.render('families');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
 });
 Router.route('/couples', function () {
   this.render('families');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
 });
 Router.route('referrals', function () {
   this.render('referrals');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
   
 
