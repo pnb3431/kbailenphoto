@@ -37,6 +37,7 @@ Router.route('/families', function () {
   this.render('navbar', {to: 'navbar'});
   this.render('footer', {to: 'footer'});
   this.render('title', {to: 'title'});
+  this.render('fotomoto', {to: 'fotomoto'});
   this.layout('ApplicationLayout');
   
 
@@ -112,4 +113,6 @@ Template.families.onRendered(function(){
 Template.contact.onRendered(function(){
 	$('#textarea1').trigger('autoresize')
 });
+
+
 
