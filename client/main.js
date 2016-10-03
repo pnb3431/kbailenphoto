@@ -96,9 +96,8 @@ Router.route('referrals', function () {
 Template.ApplicationLayout.onRendered(function(){
 	$('.parallax').parallax();
 	$('.dropdown-button').dropdown();
-	$('.carousel').carousel();
-	$('.materialboxed').materialbox();
-  	$('#textarea1').trigger('autoresize')
+	$('.slider').slider({full_width: true});
+
 });
 
 Template.Home.onRendered(function(){
@@ -106,10 +105,7 @@ Template.Home.onRendered(function(){
 });
 
 Template.families.onRendered(function(){
-	$('.carousel').carousel();
-	$('.materialboxed').materialbox();
+	$('.slider').slider({full_width: true});
 });
-Template.contact.onRendered(function(){
-	$('#textarea1').trigger('autoresize')
-});
+
 

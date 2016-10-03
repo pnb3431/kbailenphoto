@@ -1,14 +1,30 @@
 <template name="families">
   <h2 class="center-align">Family Photos</h2>
-  <div class="carousel">
-    <a class="carousel-item" href="#one!"><img class="materialboxed" width="650" src="/images/family2.jpg"></a>
-    <a class="carousel-item" href="#two!"><img class="materialboxed" width="650" src="/images/family.jpg"></a>
-    <a class="carousel-item" href="#one!"><img class="materialboxed" width="650" src="/images/family2.jpg"></a>
-    <a class="carousel-item" href="#two!"><img class="materialboxed" width="650" src="/images/family.jpg"></a>
-    <a class="carousel-item" href="#one!"><img class="materialboxed" width="650" src="/images/family2.jpg"></a>
-    <a class="carousel-item" href="#two!"><img class="materialboxed" width="650" src="/images/family.jpg"></a>
-    <a class="carousel-item" href="#one!"><img class="materialboxed" width="650" src="/images/family2.jpg"></a>
-    <a class="carousel-item" href="#two!"><img class="materialboxed" width="650" src="/images/family.jpg"></a>
+
+
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="/images/family2.jpg"> <!-- random image -->
+      </li>
+      <li>
+        <img src="/images/family.jpg"> <!-- random image -->
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
   </div>
       
 </template>
