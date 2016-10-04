@@ -37,6 +37,7 @@ Router.route('/families', function () {
   this.render('navbar', {to: 'navbar'});
   this.render('footer', {to: 'footer'});
   this.render('title', {to: 'title'});
+  this.render('portfolio', {to: 'portfolio'});
   this.layout('ApplicationLayout');
   
 
