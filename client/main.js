@@ -83,15 +83,24 @@ Router.route('/couples', function () {
   this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
 });
-Router.route('referrals', function () {
+Router.route('/referrals', function () {
   this.render('referrals');
   this.render('navbar', {to: 'navbar'});
   this.render('footer', {to: 'footer'});
   this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
+
+});
+  Router.route('/admin', function () {
+  this.render('admin');
+  this.render('s3_tester', {to: 's3_tester'});
+  
   
 
 });
+  
+
+
 
 Template.ApplicationLayout.onRendered(function(){
 	$('.parallax').parallax();
