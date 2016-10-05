@@ -1,0 +1,31 @@
+<template name="upload">
+  <h4 class="page-header">Upload a File to Amazon S3</h4>
+  	<form id="upload" action="#">
+	    <div class="file-field input-field">
+	      <div class="btn">
+	        <span>File</span>
+	        <input type="file" multiple>
+	      </div>
+	      <div class="file-path-wrapper">
+	        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+	      </div>
+	    </div>
+	</form>
+	  <div class="files">
+	    {{#each files}}
+	      <div class="file">
+		    <div class="preview">
+		      <a href="{{url}}" target="_blank"></a>
+		      {{#if isImage url}}
+		        <img src="{{url}}" alt="{{url}}">
+		      {{else}}
+		        <i class="fa fa-file-o"></i>
+		      {{/if}}
+		    </div>
+		    <input type="text" class="form-control" value="{{url}}">
+		  </div>
+	    {{else}}
+	      <p class="alert alert-warning">No files uploaded yet!</p>
+	    {{/each}}
+	  </div>
+</template>
