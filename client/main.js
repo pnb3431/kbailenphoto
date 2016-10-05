@@ -83,8 +83,18 @@ Router.route('/couples', function () {
   this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
 });
-Router.route('referrals', function () {
+Router.route('/referrals', function () {
   this.render('referrals');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
+  this.layout('ApplicationLayout');
+  
+
+});
+
+Router.route('/admin', function () {
+  this.render('upload');
   this.render('navbar', {to: 'navbar'});
   this.render('footer', {to: 'footer'});
   this.render('title', {to: 'title'});
