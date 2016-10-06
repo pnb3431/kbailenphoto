@@ -37,6 +37,7 @@ Router.route('/families', function () {
   this.render('navbar', {to: 'navbar'});
   this.render('footer', {to: 'footer'});
   this.render('title', {to: 'title'});
+  this.render('image', {to: 'image'});
   this.layout('ApplicationLayout');
   
 
@@ -83,8 +84,19 @@ Router.route('/couples', function () {
   this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
 });
-Router.route('referrals', function () {
+Router.route('/referrals', function () {
   this.render('referrals');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('title', {to: 'title'});
+  this.layout('ApplicationLayout');
+  
+
+});
+Router.route('/admin', function () {
+  this.render('admin');
+  this.render('dropzone', {to: 'dropzone'});
+  this.render('image', {to: 'image'});
   this.render('navbar', {to: 'navbar'});
   this.render('footer', {to: 'footer'});
   this.render('title', {to: 'title'});
