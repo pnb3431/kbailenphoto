@@ -1,6 +1,6 @@
 S3.config = {
-    key: ,
-    secret: ,
-    bucket: 'kbailenphoto',
+    key: Meteor.settings.AWSAccessKeyId,
+    secret: Meteor.settings.AWSSecretAccessKey,
+    bucket: Meteor.settings.AWSBucket
     
 };

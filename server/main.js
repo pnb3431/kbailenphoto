@@ -7,4 +7,3 @@ Meteor.startup(() => {
 Meteor.settings.contactForm = {
   emailTo: 'pete.bailen@gmail.com'
 };
-

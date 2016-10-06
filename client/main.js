@@ -94,7 +94,8 @@ Router.route('/referrals', function () {
   Router.route('/admin', function () {
   this.render('admin');
   this.render('s3_tester', {to: 's3_tester'});
-  
+  this.render('files', {to: 'files'});
+  this.render('image', {to: 'image'});
   
 
 });
