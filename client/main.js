@@ -110,7 +110,7 @@ Template.ApplicationLayout.onRendered(function(){
 	$('.dropdown-button').dropdown();
 	$('.carousel').carousel();
 	$('.materialboxed').materialbox();
-  	$('#textarea1').trigger('autoresize')
+  $('#textarea1').trigger('autoresize')
 });
 
 Template.Home.onRendered(function(){
