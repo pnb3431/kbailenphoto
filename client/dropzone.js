@@ -6,9 +6,9 @@ Template.dropzone.events({
         
         Images.insert(newFile, function (error, fileObj) {
           if (error) {
-      		  toastr.error("Upload failed... please try again.");
+      		  Materialize.toast("Upload failed... please try again.",4000);
           } else {
-            toastr.success('Upload succeeded!');
+            Materialize.toast('Upload succeeded!',4000);
           }
       });
     });

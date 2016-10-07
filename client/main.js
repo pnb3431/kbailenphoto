@@ -34,10 +34,11 @@ Router.route('/contact', function () {
 });
 Router.route('/families', function () {
   this.render('families');
+  this.render('image', {to: 'image'});
   this.render('navbar', {to: 'navbar'});
   this.render('footer', {to: 'footer'});
   this.render('title', {to: 'title'});
-  this.render('image', {to: 'image'});
+  this.render('slider', {to: 'slider'});
   this.layout('ApplicationLayout');
   
 
@@ -119,10 +120,14 @@ Template.Home.onRendered(function(){
 });
 
 Template.families.onRendered(function(){
-	$('.carousel').carousel();
+	$('.slider').slider({full_width: true});
+  $('.slider').slider('start');
 	$('.materialboxed').materialbox();
 });
 Template.contact.onRendered(function(){
 	$('#textarea1').trigger('autoresize')
+});
+Template.image.onRendered(function(){
+  $('.materialboxed').materialbox();
 });
 
