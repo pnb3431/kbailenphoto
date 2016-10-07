@@ -24,8 +24,8 @@ iron:router
 bredikhin:contact-form
 raix:ui-dropped-event
 twbs:bootstrap
-cfs:standard-packages
-cfs:gridfs
-cfs:s3
 pcel:toastr
 insecure@1.0.7
+cfs:standard-packages
+cfs:s3
+cfs:gridfs
