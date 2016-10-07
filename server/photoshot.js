@@ -6,9 +6,9 @@ Slingshot.fileRestrictions("myImageUploads", {
 });
 
 Slingshot.createDirective("myImageUploads", Slingshot.S3Storage, {
-  AWSAccessKeyId: "AKIAIBVK4SOLY32R3ANQ",
-  AWSSecretAccessKey: "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",
-  bucket: "kbailenphoto", 
+  AWSAccessKeyId: Meteor.settings.private.AWSAccessKeyId,
+  AWSSecretAccessKey: Meteor.settings.private.AWSSecretAccessKey,
+  bucket: Meteor.settings.private.AWSBucket, 
   
 
   authorize: function () {
