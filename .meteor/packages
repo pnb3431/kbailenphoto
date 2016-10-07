@@ -23,7 +23,6 @@ poetic:materialize-scss
 iron:router
 bredikhin:contact-form
 raix:ui-dropped-event
-twbs:bootstrap
 pcel:toastr
 insecure@1.0.7
 cfs:standard-packages

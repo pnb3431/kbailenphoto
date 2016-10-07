@@ -115,6 +115,7 @@ Template.ApplicationLayout.onRendered(function(){
 
 Template.Home.onRendered(function(){
 	$('.parallax').parallax();
+  $('.dropdown-button').dropdown();
 });
 
 Template.families.onRendered(function(){
