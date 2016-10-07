@@ -83,11 +83,24 @@ Router.route('/couples', function () {
   this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
 });
-Router.route('referrals', function () {
+Router.route('/referrals', function () {
   this.render('referrals');
   this.render('navbar', {to: 'navbar'});
   this.render('footer', {to: 'footer'});
   this.render('title', {to: 'title'});
+  this.layout('ApplicationLayout');
+  
+
+});
+Router.route('/admin', function () {
+  this.render('admin');
+  this.render('navbar', {to: 'navbar'});
+  this.render('footer', {to: 'footer'});
+  this.render('imageUploader', {to: 'imageUploader'});
+  this.render('title', {to: 'title'});
+  this.render('image', {to: 'image'});
+  this.render('myPicture', {to: 'myPicture'});
+  this.render('loginButtons', {to: 'loginButtons'});
   this.layout('ApplicationLayout');
   
 
@@ -112,4 +125,9 @@ Template.families.onRendered(function(){
 Template.contact.onRendered(function(){
 	$('#textarea1').trigger('autoresize')
 });
+Template.admin.onRendered(function(){
+  $('.materialboxed').materialbox();
+});
+
+
 
