@@ -103,10 +103,20 @@ Template.ApplicationLayout.onRendered(function(){
 	$('.carousel').carousel();
 	$('.materialboxed').materialbox();
   $('#textarea1').trigger('autoresize')
+  $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
 });
 
 Template.Home.onRendered(function(){
 	$('.parallax').parallax();
+});
+
+Template.pricing.onRendered(function(){
+  $('.parallax').parallax();
+  $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
 });
 
 Template.families.onRendered(function(){
