@@ -9,20 +9,22 @@ Template.imageUploader.events({'change .uploadFile': function(event, template) {
   var upload = new Slingshot.Upload("myImageUploads");
   var timeStamp = Math.floor(Date.now());                 
          
-  upload.send(document.getElementById('uploadFile').files[0], function (error, downloadUrl) {
+  upload.send(document.getElementById('uploadFile').files[0], function (error, Url) {
   uploader.set();
   if (error) {
-    Materialize.toast('Error uploading');
+    Materialize.toast('Error uploading', 4000);
     alert (error);
   }
   else{
     Materialize.toast("Success!",4000);
-    Materialize.toast('uploaded file available here: '+downloadUrl,4000);
+    Materialize.toast('uploaded file available here: '+Url,4000);
+    _addUrlToDatabase( Url );
     imageDetails.insert({
-      imageurl: downloadUrl,
+      imageurl: Url,
       time: timeStamp,
       uploadedBy: currentUserId
     });
+
   }
   });
   uploader.set(upload);
@@ -60,5 +62,35 @@ Template.image.helpers({
 
   },
 
+});
+
+let _addUrlToDatabase = ( url ) => {
+  Meteor.call( "storeUrlInDatabase", url, ( error ) => {
+    if ( error ) {
+      Materialize.toast( error.reason, "warning" );
+      
+    } else {
+      Materialize.toast( "File uploaded to Amazon S3!", 4000 );
+      
+    }
+  });
+};
+
+Template.files.onCreated( () => Template.instance().subscribe( 'files' ) );
+
+Template.files.helpers({
+  files() {
+    var files = Files.find( {}, { sort: { "added": -1 } } );
+    if ( files ) {
+      return files;
+    }
+  }
+});
+
+Template.file.helpers({
+  isImage( url ) {
+    const formats = [ 'jpg', 'jpeg', 'png', 'gif' ];
+    return _.find( formats, ( format ) => url.indexOf( format ) > -1 );
+  }
 });
 

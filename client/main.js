@@ -83,25 +83,16 @@ Router.route('/couples', function () {
   this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
 });
-Router.route('/referrals', function () {
-  this.render('referrals');
-  this.render('navbar', {to: 'navbar'});
-  this.render('footer', {to: 'footer'});
-  this.render('title', {to: 'title'});
-  this.layout('ApplicationLayout');
-  
-
-});
 Router.route('/admin', function () {
   this.render('admin');
   this.render('navbar', {to: 'navbar'});
   this.render('footer', {to: 'footer'});
   this.render('imageUploader', {to: 'imageUploader'});
   this.render('title', {to: 'title'});
-  this.render('image', {to: 'image'});
-  this.render('myPicture', {to: 'myPicture'});
   this.render('loginButtons', {to: 'loginButtons'});
   this.layout('ApplicationLayout');
+  this.render('files', {to: 'files'});
+  this.render('file', {to: 'file'});
   
 
 });
@@ -111,7 +102,7 @@ Template.ApplicationLayout.onRendered(function(){
 	$('.dropdown-button').dropdown();
 	$('.carousel').carousel();
 	$('.materialboxed').materialbox();
-  	$('#textarea1').trigger('autoresize')
+  $('#textarea1').trigger('autoresize')
 });
 
 Template.Home.onRendered(function(){
@@ -126,6 +117,18 @@ Template.contact.onRendered(function(){
 	$('#textarea1').trigger('autoresize')
 });
 Template.admin.onRendered(function(){
+  $('.slider').slider({full_width: true});
+  $('.carousel').carousel();
+  $('.materialboxed').materialbox();
+});
+Template.file.onRendered(function(){
+  $('.slider').slider({full_width: true});
+  $('.carousel').carousel();
+  $('.materialboxed').materialbox();
+});
+Template.files.onRendered(function(){
+  $('.slider').slider();
+  $('.carousel').carousel();
   $('.materialboxed').materialbox();
 });
 

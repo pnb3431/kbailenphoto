@@ -8,15 +8,18 @@ Slingshot.fileRestrictions("myImageUploads", {
 Slingshot.createDirective("myImageUploads", Slingshot.S3Storage, {
   AWSAccessKeyId: Meteor.settings.private.AWSAccessKeyId,
   AWSSecretAccessKey: Meteor.settings.private.AWSSecretAccessKey,
+  acl: "public-read",
   bucket: Meteor.settings.private.AWSBucket, 
   
 
   authorize: function () {
+    let userFileCount = Files.find( { "userId": this.userId } ).count();
     if (!this.userId) {
       var message = "Please login before posting images";
       throw new Meteor.Error("Login Required", message);
     }
 
+    
     return true;
   },
 
@@ -25,4 +28,13 @@ Slingshot.createDirective("myImageUploads", Slingshot.S3Storage, {
     return currentUserId + "/" + file.name;
   }
 
+});
+Meteor.publish( 'files', function(){
+  var data = Files.find( { "userId": this.userId } );
+
+  if ( data ) {
+    return data;
+  }
+
+  return this.ready();
 });
