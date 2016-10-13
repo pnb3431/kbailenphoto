@@ -112,6 +112,8 @@ Template.Home.onRendered(function(){
 	$('.parallax').parallax();
 });
 
+
+
 Template.pricing.onRendered(function(){
   $('.parallax').parallax();
   $('.collapsible').collapsible({
@@ -124,7 +126,8 @@ Template.families.onRendered(function(){
 	$('.materialboxed').materialbox();
 });
 Template.contact.onRendered(function(){
-	$('#textarea1').trigger('autoresize')
+	$('#textarea1').trigger('autoresize');
+  $('.parallax').parallax();
 });
 Template.admin.onRendered(function(){
   $('.slider').slider({full_width: true});

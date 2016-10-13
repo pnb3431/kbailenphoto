@@ -5,6 +5,7 @@
   "private": {
     "AWSAccessKeyId" : "<AWS KEY>",
     "AWSSecretAccessKey" : "<AWS SECRET>",
-    "AWSBucket" : "<AWS BUCKET>"
+    "AWSBucket" : "<AWS BUCKET>",
+    "mailgun" : :"<mailgun address and password>"
   }
 }
