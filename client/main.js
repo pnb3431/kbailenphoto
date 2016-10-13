@@ -103,6 +103,7 @@ Template.ApplicationLayout.onRendered(function(){
 	$('.carousel').carousel();
 	$('.materialboxed').materialbox();
   $('#textarea1').trigger('autoresize')
+  $(".button-collapse").sideNav();
   $('.collapsible').collapsible({
       accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     });
@@ -111,7 +112,9 @@ Template.ApplicationLayout.onRendered(function(){
 Template.Home.onRendered(function(){
 	$('.parallax').parallax();
 });
-
+Template.navbar.onRendered(function(){
+  $(".button-collapse").sideNav();
+});
 
 
 Template.pricing.onRendered(function(){
