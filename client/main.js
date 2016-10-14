@@ -37,6 +37,7 @@ Router.route('/families', function () {
   this.render('navbar', {to: 'navbar'});
   this.render('footer', {to: 'footer'});
   this.render('title', {to: 'title'});
+  this.render('files', {to: 'files'});
   this.layout('ApplicationLayout');
   
 
@@ -147,6 +148,13 @@ Template.files.onRendered(function(){
   $('.carousel').carousel();
   $('.materialboxed').materialbox();
 });
+
+Template.file.events = {
+  "click .btn" : function () {
+    // Remove from S3 and Database.
+    Meteor.call('removePhotoData', this._id);
+  }
+};
 
 
 
