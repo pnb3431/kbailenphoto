@@ -1,4 +1,5 @@
 var imageDetails = new Mongo.Collection('images');
+var album = Albums.findOne(metaContext.albumId);
 
 Slingshot.fileRestrictions("myImageUploads", {
   allowedFileTypes: ["image/png", "image/jpeg", "image/gif"],
@@ -12,20 +13,15 @@ Slingshot.createDirective("myImageUploads", Slingshot.S3Storage, {
   bucket: Meteor.settings.private.AWSBucket, 
   
 
-  authorize: function () {
+  authorize: function (file, metaContext) {
     let userFileCount = Files.find( { "userId": this.userId } ).count();
-    if (!this.userId) {
-      var message = "Please login before posting images";
-      throw new Meteor.Error("Login Required", message);
-    }
-
     
-    return true;
+    return metaContext.albumId + "/" + Date.now() + "-" + file.name;
   },
 
-  key: function (file) {
+  key: function (file, metaContext) {
     var currentUserId = Meteor.user().emails[0].address;
-    return currentUserId + "/" + file.name;
+    return metaContext.albumId + "/" + Date.now() + "-" + file.name;
   }
 
 });
