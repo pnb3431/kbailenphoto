@@ -25,12 +25,14 @@ Slingshot.createDirective("myImageUploads", Slingshot.S3Storage, {
 
   key: function (file, metaContext) {
     var currentUserId = Meteor.user().emails[0].address;
+    
     return currentUserId + "/" + metaContext.albumId + "/" + file.name;
+
   }
 
 });
 Meteor.publish( 'files', function(){
-  var data = Files.find( { "userId": this.userId } );
+  var data = Files.find( { "albumId": "Couples" } );
 
   if ( data ) {
     return data;

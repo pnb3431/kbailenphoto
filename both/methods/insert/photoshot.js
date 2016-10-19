@@ -1,5 +1,5 @@
 Meteor.methods({
-  storeUrlInDatabase: function( url ) {
+  storeUrlInDatabase: function( url, selectValue ) {
     //  check( url, String );
     
 
@@ -7,8 +7,9 @@ Meteor.methods({
       Files.insert({
         url: url,
         userId: Meteor.userId(),
-        added: new Date(), 
+        added: new Date(),
         albumId: selectValue
+        
       });
     } catch( exception ) {
       return exception;

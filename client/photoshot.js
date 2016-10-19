@@ -18,7 +18,7 @@ Template.imageUploader.events({'change .uploadFile': function(event, template) {
   else{
     Materialize.toast("Success!",4000);
     Materialize.toast('uploaded file available here: '+Url,4000);
-    _addUrlToDatabase( Url );
+    _addUrlToDatabase( Url, selectValue );
     imageDetails.insert({
       imageurl: Url,
       time: timeStamp,
@@ -55,8 +55,8 @@ Template.imageUploader.helpers({
 
 
 
-let _addUrlToDatabase = ( url ) => {
-  Meteor.call( "storeUrlInDatabase", url, ( error ) => {
+let _addUrlToDatabase = ( url, selectValue ) => {
+  Meteor.call( "storeUrlInDatabase", url, selectValue, ( error ) => {
     if ( error ) {
       Materialize.toast( error.reason, "warning" );
       
