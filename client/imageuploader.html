@@ -2,11 +2,26 @@
 	<div class="container">
 	  	<div class="col-md-6 col-md-offset-3">
 	   		<h1>Upload Photos</h1>
-	   		<span style="font-size:15px; margin-left:10px;">
+	   		
+	    		<div class="input-field col s12">
+					<select>
+					      <option value="" disabled selected>Choose your album</option>
+					      <option value="Families">Families</option>
+					      <option value="Couples">Couples</option>
+					      <option value="Children">Children</option>
+					      <option value="Maternity">Maternity</option>
+					      <option value="Babies">Babies</option>
+					      <option value="Seniors">Seniors</option>
+					</select>
+					<label>Portfolio Album</label>
+				</div>
+			<span style="font-size:15px; margin-left:10px;">
 	    		<div class="form-group">
 	      			<label for="selectFile">Select</label>
 			        <input type="file" class="uploadFile" id="uploadFile">
 			        <p class="help-block">Upload image here.</p>
+			        <!-- Dropdown Trigger -->
+
 	    		</div>
 			    <div class="row">
 			      	<div class="col-md-6">

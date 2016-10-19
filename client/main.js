@@ -137,6 +137,8 @@ Template.admin.onRendered(function(){
   $('.slider').slider({full_width: true});
   $('.carousel').carousel();
   $('.materialboxed').materialbox();
+  $("#input-field").val();
+  $('select').material_select();
 });
 Template.file.onRendered(function(){
   $('.slider').slider({full_width: true});

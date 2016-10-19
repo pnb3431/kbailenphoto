@@ -23,9 +23,9 @@ Slingshot.createDirective("myImageUploads", Slingshot.S3Storage, {
     return true;
   },
 
-  key: function (file) {
+  key: function (file, metaContext) {
     var currentUserId = Meteor.user().emails[0].address;
-    return currentUserId + "/" + file.name;
+    return currentUserId + "/" + metaContext.albumId + "/" + file.name;
   }
 
 });

@@ -5,8 +5,8 @@ var currentUserId = Meteor.userId();
 Template.imageUploader.events({'change .uploadFile': function(event, template) {
 
   event.preventDefault();
-
-  var upload = new Slingshot.Upload("myImageUploads");
+  var metaContext = {albumId: selectValue}
+  var upload = new Slingshot.Upload("myImageUploads", metaContext);
   var timeStamp = Math.floor(Date.now());                 
          
   upload.send(document.getElementById('uploadFile').files[0], function (error, Url) {
@@ -22,7 +22,8 @@ Template.imageUploader.events({'change .uploadFile': function(event, template) {
     imageDetails.insert({
       imageurl: Url,
       time: timeStamp,
-      uploadedBy: currentUserId
+      uploadedBy: currentUserId,
+      albumId: selectValue
     });
 
   }
@@ -52,17 +53,7 @@ Template.imageUploader.helpers({
 
 });
 
-Template.image.helpers({
 
-
-  url: function () {
-    
-  return imageDetails.findOne({uploadedBy: currentUserId},{sort:{ time : -1 } });
-
-
-  },
-
-});
 
 let _addUrlToDatabase = ( url ) => {
   Meteor.call( "storeUrlInDatabase", url, ( error ) => {
@@ -80,7 +71,7 @@ Template.files.onCreated( () => Template.instance().subscribe( 'files' ) );
 
 Template.files.helpers({
   files() {
-    var files = Files.find( {}, { sort: { "added": -1 } } );
+    var files = Files.find( {albumId: "Couples"}, { sort: { "added": -1 } } );
     if ( files ) {
       return files;
     }
@@ -91,6 +82,15 @@ Template.file.helpers({
   isImage( url ) {
     const formats = [ 'jpg', 'jpeg', 'png', 'gif' ];
     return _.find( formats, ( format ) => url.indexOf( format ) > -1 );
+  }
+});
+
+Template.imageUploader.events({
+  'change select': function(event){
+    event.preventDefault();
+      selectValue = event.target.value;
+      console.log(selectValue);
+      
   }
 });
 
