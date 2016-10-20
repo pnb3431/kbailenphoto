@@ -67,7 +67,7 @@ let _addUrlToDatabase = ( url, selectValue ) => {
   });
 };
 
-Template.files.onCreated( () => Template.instance().subscribe( 'files' ) );
+//Template.files.onCreated( () => Template.instance().subscribe( 'files' ) );
 
 Template.files.helpers({
   files() {

@@ -1,5 +1,11 @@
+AccountsTemplates.configure({
+  forbidClientAccountCreation: true
+  });
 
+Accounts.config({
+  forbidClientAccountCreation : true
 
+});
 
 Router.route('/', function () {
   this.render('Home');
@@ -7,7 +13,7 @@ Router.route('/', function () {
   this.render('footer', {to: 'footer'});
   this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
-  this.render('loginButtons', {to: 'loginButtons'});
+  
 
 });
 
@@ -74,8 +80,7 @@ Router.route('/admin', function () {
   this.render('title', {to: 'title'});
   this.render('loginButtons', {to: 'loginButtons'});
   this.layout('ApplicationLayout');
-  this.render('files', {to: 'files'});
-  this.render('file', {to: 'file'});
+
   
 
 });
@@ -116,9 +121,6 @@ Template.contact.onRendered(function(){
   $('.parallax').parallax();
 });
 Template.admin.onRendered(function(){
-  $('.slider').slider({full_width: true});
-  $('.carousel').carousel();
-  $('.materialboxed').materialbox();
   $("#input-field").val();
   $('select').material_select();
 });
@@ -131,7 +133,7 @@ Template.files.onRendered(function(){
   $('.slider').slider();
   $('.carousel').carousel();
   $('.materialboxed').materialbox();
-  
+
 });
 
 Template.file.events = {
