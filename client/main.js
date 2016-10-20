@@ -112,10 +112,6 @@ Template.pricing.onRendered(function(){
     });
 });
 
-Template.families.onRendered(function(){
-	$('.carousel').carousel();
-	$('.materialboxed').materialbox();
-});
 Template.contact.onRendered(function(){
 	$('#textarea1').trigger('autoresize');
   $('.parallax').parallax();
