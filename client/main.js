@@ -131,7 +131,7 @@ Template.files.onRendered(function(){
   $('.slider').slider();
   $('.carousel').carousel();
   $('.materialboxed').materialbox();
-  $('ul.tabs').tabs('select_tab', 'tab_id');
+  
 });
 
 Template.file.events = {
