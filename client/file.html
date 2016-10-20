@@ -1,13 +1,15 @@
 <template name="file">
-  <div class="file">
-    <div class="preview">
+  
+    <div class="col s12 m6">
       <a href="{{url}}" target="_blank"></a>
       {{#if isImage url}}
         <img class="responsive-img" src="{{url}}" alt="{{url}}">
+        {{#if currentUser}}
         <button type="delete" class="btn btn-primary">Delete</button>
+        {{/if}}
       {{else}}
         <i class="fa fa-file-o"></i>
       {{/if}}
     </div>
-  </div>
+  
 </template>

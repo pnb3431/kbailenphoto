@@ -1,15 +1,13 @@
 
 
 
-
-
 Router.route('/', function () {
   this.render('Home');
   this.render('navbar', {to: 'navbar'});
   this.render('footer', {to: 'footer'});
   this.render('title', {to: 'title'});
   this.layout('ApplicationLayout');
-  
+  this.render('loginButtons', {to: 'loginButtons'});
 
 });
 
@@ -46,6 +44,12 @@ Router.route('/contact', function () {
 Router.route('/portfolio/:_Id', {
     name: 'portfolioPage',
     template: 'files',
+    layoutTemplate: 'ApplicationLayout',
+    yieldRegions: {
+    'navbar': {to: 'navbar'},
+    'footer': {to: 'footer'},
+    'title': {to: 'title'}
+  },
     //data: function(){
         //var currentPage = this.params._Id;
         //console.log(currentPage);
@@ -127,6 +131,7 @@ Template.files.onRendered(function(){
   $('.slider').slider();
   $('.carousel').carousel();
   $('.materialboxed').materialbox();
+  $('ul.tabs').tabs('select_tab', 'tab_id');
 });
 
 Template.file.events = {
