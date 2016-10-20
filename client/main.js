@@ -32,58 +32,36 @@ Router.route('/contact', function () {
   
 
 });
-Router.route('/families', function () {
-  this.render('families');
-  this.render('navbar', {to: 'navbar'});
-  this.render('footer', {to: 'footer'});
-  this.render('title', {to: 'title'});
-  this.render('files', {to: 'files'});
-  this.layout('ApplicationLayout');
+
   
 
-});
-Router.route('/children', function () {
-  this.render('families');
-  this.render('navbar', {to: 'navbar'});
-  this.render('footer', {to: 'footer'});
-  this.render('title', {to: 'title'});
-  this.layout('ApplicationLayout');
-  
+
+//Router.route('/seniors', function () {
+  //this.render('families');
+  //this.render('navbar', {to: 'navbar'});
+  //this.render('footer', {to: 'footer'});
+  //this.render('title', {to: 'title'});
+  //this.layout('ApplicationLayout');
+//});
+Router.route('/portfolio/:_Id', {
+    name: 'portfolioPage',
+    template: 'files',
+    //data: function(){
+        //var currentPage = this.params._Id;
+        //console.log(currentPage);
+        //return Files.findOne({ _Id: currentPage });
+    //},
+
+    
+    subscriptions: function(){
+        var currentPage = this.params._Id;
+        console.log(currentPage);
+        return Meteor.subscribe('files', currentPage);
+    }
 
 });
-Router.route('/babies', function () {
-  this.render('families');
-  this.render('navbar', {to: 'navbar'});
-  this.render('footer', {to: 'footer'});
-  this.render('title', {to: 'title'});
-  this.layout('ApplicationLayout');
-  
 
-});
 
-Router.route('/maternity', function () {
-  this.render('families');
-  this.render('navbar', {to: 'navbar'});
-  this.render('footer', {to: 'footer'});
-  this.render('title', {to: 'title'});
-  this.layout('ApplicationLayout');
-  
-
-});
-Router.route('/seniors', function () {
-  this.render('families');
-  this.render('navbar', {to: 'navbar'});
-  this.render('footer', {to: 'footer'});
-  this.render('title', {to: 'title'});
-  this.layout('ApplicationLayout');
-});
-Router.route('/couples', function () {
-  this.render('families');
-  this.render('navbar', {to: 'navbar'});
-  this.render('footer', {to: 'footer'});
-  this.render('title', {to: 'title'});
-  this.layout('ApplicationLayout');
-});
 Router.route('/admin', function () {
   this.render('admin');
   this.render('navbar', {to: 'navbar'});

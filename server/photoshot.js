@@ -31,14 +31,16 @@ Slingshot.createDirective("myImageUploads", Slingshot.S3Storage, {
   }
 
 });
-Meteor.publish( 'files', function(){
-  var data = Files.find( { "albumId": "Couples" } );
-
-  if ( data ) {
-    return data;
+Meteor.publish( 'files', function(currentPage){
+  
+  console.log({currentPage});
+  if (currentPage != undefined){
+  return Files.find( { "albumId": currentPage } );
+  //if ( data ) {
+    //return data;
+  //}
   }
-
-  return this.ready();
+  //return this.ready();
 });
 
 Meteor.methods({
