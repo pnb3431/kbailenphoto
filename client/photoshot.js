@@ -94,3 +94,5 @@ Template.imageUploader.events({
   }
 });
 
+
+

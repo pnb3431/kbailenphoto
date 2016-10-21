@@ -124,12 +124,14 @@ Template.file.onRendered(function(){
   $('.slider').slider({full_width: true});
   $('.carousel').carousel();
   $('.materialboxed').materialbox();
+
+
 });
 Template.files.onRendered(function(){
   $('.slider').slider();
   $('.carousel').carousel();
   $('.materialboxed').materialbox();
-
+  
 });
 
 Template.file.events = {
