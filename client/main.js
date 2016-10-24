@@ -3,7 +3,7 @@ AccountsTemplates.configure({
   });
 
 Accounts.config({
-  forbidClientAccountCreation : true
+  forbidClientAccountCreation : false
 
 });
 
