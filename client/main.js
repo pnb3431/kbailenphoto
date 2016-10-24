@@ -3,11 +3,11 @@
 //});
 
 AccountsTemplates.configure({
-  forbidClientAccountCreation: false
+  forbidClientAccountCreation: true
   });
 
 Accounts.config({
-  forbidClientAccountCreation : false
+  forbidClientAccountCreation : true
 
 });
 
