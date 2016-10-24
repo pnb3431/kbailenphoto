@@ -29,5 +29,4 @@ accounts-password
 email
 check
 peerlibrary:aws-sdk
-useraccounts:materialize
 isotope:isotope
