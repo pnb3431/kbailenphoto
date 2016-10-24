@@ -1,5 +1,5 @@
 AccountsTemplates.configure({
-  forbidClientAccountCreation: true
+  forbidClientAccountCreation: false
   });
 
 Accounts.config({
