@@ -8,6 +8,6 @@ Meteor.startup(() => {
 
 //email the contact form is sent to
 Meteor.settings.contactForm = {
-  emailTo: 'pete.bailen@gmail.com'
+  emailTo: 'kbailen@kbailenphoto.com'
 };
 
