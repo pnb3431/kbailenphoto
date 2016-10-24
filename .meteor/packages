@@ -24,7 +24,6 @@ poetic:materialize-scss
 iron:router
 bredikhin:contact-form
 edgee:slingshot
-accounts-ui
 accounts-password
 email
 check
