@@ -1,2 +1,6 @@
+@import "{poetic:materialize-scss}/sass/components/_color.scss";
+$primary-color: color("pink", "lighten-3");
+
 @import "{poetic:materialize-scss}/sass/materialize.scss";
+
 
